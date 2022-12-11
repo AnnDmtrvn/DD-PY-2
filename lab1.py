@@ -1,6 +1,6 @@
-
 import doctest
-
+ 
+ 
 class Cake:
     def __init__(self, weight: float, shape: str):
         """
@@ -41,75 +41,81 @@ class Cake:
         >>> tasty_cake.eat_cake()
         """
         ...
-
-if __name__ == "__main__":
-    doctest.testmod()  # тестирование примеров, которые находятся в документации
-
-class Cat:
+ 
+ 
+class Сat:
     def __init__(self, breed: str, name: str):
+        """
+        Создание и подготовка к работе объекта "Cat"
+ 
+        :param breed: Порода
+        :param name: Имя
+ 
+        Примеры:
+        >>> c_blue = Cat('some_breed','Blue')  # инициализация экземпляра класса
+        """
         self.breed = breed
         self.name = name
+ 
+    def pet_cat(self) -> None:
         """
-        Создание и подготовка к работе объекта "Кот"
-        :param breed: Порода кота
-        :param name: Кличка кота
+        Погладить.
+ 
         Примеры:
-        >>> cat = Cat("british", "Tom")  # инициализация экземпляра класса
-        """
-
-    def pet_cat(self):
-        """
-        Функция которая проверяет можно ли разрезать торт
-        :return: да или нет
-        Примеры:
-        >>> cake = cake(1, round)
-        >>> cake.is_cut()
-        """
-
-    def def play_cat(self):
-        """
-        Функция которая проверяет можно ли съесть торт
-        :return: да или нет
-        Примеры:
-        >>> cake = cake(1, round)
-        >>> cake.is_eat()
+        >>> c_blue = Cat('some_breed','Blue')
+        >>> c_blue.pet_cat()
         """
         ...
-
-if __name__ == "__main__":
-    doctest.testmod()  # тестирование примеров, которые находятся в документации
-
-
-class IceCream
-    def __init__(self, taste, sort):
-        self.taste = taste
-        self.sort = sort
+ 
+    def play_cat(self, time: int) -> None:
         """
-        Создание и подготовка к работе объекта "Мороженное"
-        :param breed: Порода кота
-        :param name: Кличка кота
+        Поиграть.
+ 
+        :param time: Время игры
+        :raise ValueError: Если величина времени меньше 0, вызываем ошибку.
+ 
         Примеры:
-        >>> cat = Cat("british", "Tom")  # инициализация экземпляра класса
+        >>> c_blue = Cat('some_breed','Blue')
+        >>> c_blue.play_cat()
         """
-
-    def sell_icecream(self):
+        if time < 0:
+            raise ValueError("Время игры не может быть меньше 0")
+        ...
+ 
+ 
+class Coat:
+    def __init__(self, size: str, color: str):
         """
-        Функция которая проверяет можно ли разрезать торт
-        :return: да или нет
+        Создание и подготовка к работе объекта "Coat"
+ 
+        :param size: Размер
+        :param color: Цвет
+ 
         Примеры:
-        >>> cake = cake(1, round)
-        >>> cake.is_cut()
+        >>> winter_coat = Coat('XL', 'black')  # инициализация экземпляра класса
         """
-
-    def buy_icecream(self):
+        self.size = size
+        self.color = color
+ 
+    def put_on(self) -> None:
         """
-        Функция которая проверяет можно ли съесть торт
-        :return: да или нет
+        Надеть.
+ 
         Примеры:
-        >>> cake = cake(1, round)
-        >>> cake.is_eat()
+        >>> winter_coat = Coat('XL', 'black')
+        >>> winter_coat.put_on()
         """
         ...
-
+ 
+    def open_up(self) -> None:
+        """
+        Расстегнуть.
+ 
+        Примеры:
+        >>> winter_coat = Coat('XL', 'black')
+        >>> winter_coat.open_up()
+        """
+        ...
+ 
 if __name__ == "__main__":
     doctest.testmod()  # тестирование примеров, которые находятся в документации
