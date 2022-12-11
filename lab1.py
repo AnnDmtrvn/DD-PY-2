@@ -2,33 +2,43 @@
 import doctest
 
 class Cake:
-    def __init__(self, weight, shape):
-        self.colour = weight
+    def __init__(self, weight: float, shape: str):
+        """
+        Создание и подготовка к работе объекта "Cake"
+ 
+        :param weight: Вес
+        :param shape: Форма
+ 
+        Примеры:
+        >>> tasty_cake = Cake(2.05,'round')  # инициализация экземпляра класса
+        """
+        if weight < 0:
+            raise ValueError("Вес не может быть меньше 0")
+        self.weigt = weight
         self.shape = shape
+ 
+    def cut_cake(self, pieces: int) -> None:
         """
-        Создание и подготовка к работе объекта "Торт"
-        :param weight: Вес торта
-        :param shape: Форма торта
+        Разрезание торта.
+        :param pieces: Число кусков
+ 
+        :raise ValueError: Если число кусков меньше 2, выдаем ошибку.
+ 
         Примеры:
-        >>> cake = Cake(1, round)  # инициализация экземпляра класса
+        >>> tasty_cake = Cake(2.05,'round')
+        >>> tasty_cake.cut_cake()
         """
-
-    def cut_cake(self):
+        if pieces < 2:
+            raise ValueError("Нельзя разрезать меньше чем на 2 куска")
+        ...
+ 
+    def eat_cake(self) -> None:
         """
-        Функция которая проверяет можно ли разрезать торт
-        :return: да или нет
+        Съесть.
+ 
         Примеры:
-        >>> cake = cake(1, round)
-        >>> cake.is_cut()
-        """
-
-    def eat_cake(self):
-        """
-        Функция которая проверяет можно ли съесть торт
-        :return: да или нет
-        Примеры:
-        >>> cake = cake(1, round)
-        >>> cake.is_eat()
+        >>> tasty_cake = Cake(2.05,'round')
+        >>> tasty_cake.eat_cake()
         """
         ...
 
