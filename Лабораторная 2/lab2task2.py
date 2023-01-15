@@ -40,9 +40,7 @@ class Library:
         for index, instance in enumerate(self.books):
             if instance.id_ == id_:
                 return index
-            if not self.books:
-                raise ValueError("Книги с запрашиваемым id не существует")
-
+           
 
 if __name__ == '__main__':
     empty_library = Library()  # инициализируем пустую библиотеку
