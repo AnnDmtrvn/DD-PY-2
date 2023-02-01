@@ -23,22 +23,30 @@ class Book:
 class PaperBook(Book):
     def __init__(self, name: str, author: str, pages: int):
         super().__init__(name, author)
-        if isinstance(pages, int):
-            if pages > 0:
-                self.pages = pages
-            else:
-                raise ValueError(f'Invalid number of pages: {pages!r}')
-        else:
-            raise TypeError(f'Type of pages: {pages!r}')
+        self._pages = pages
 
-    def __str__(self):
-        return f"Книга: {self.name}\nАвтор: {self.author}\nСтраниц: {self.pages}"
+    @property
+    def pages(self):
+        return self._pages
+
+    @pages.setter
+    def pages(self, new_page) -> None:
+        if isinstance(new_page, int):
+            if new_page > 0:
+                self._pages = new_page
+            else:
+                raise ValueError(f'Invalid number of pages: {new_page!r}')
+        else:
+            raise TypeError(f'Type of pages: {new_page!r}')
+        self._pages = new_page
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self._name!r}, author={self._author!r}, pages={self._pages!r})"
 
 
 class AudioBook(Book):
     def __init__(self, name: str, author: str, duration: float):
         super().__init__(name, author)
-        self._duration = None
         self._duration = duration
 
     @property
@@ -49,12 +57,12 @@ class AudioBook(Book):
     def duration(self, new_duration) -> None:
         if isinstance(new_duration, float):
             if new_duration > 0:
-                self.new_duration = new_duration
+                self._duration = new_duration
             else:
                 raise ValueError(f'Invalid duration: {new_duration!r}')
         else:
             raise TypeError(f'Type of duration: {new_duration!r}')
         self._duration = new_duration
 
-    def __str__(self):
-        return f"Книга: {self.name}\nАвтор: {self.author}\nПродолжительность: {self.duration}"
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self._name!r}, author={self._author!r}, duration={self._duration!r})"
