@@ -6,8 +6,23 @@ class House:
     """ Базовый класс дома. """
 
     def __init__(self, material: str, floor: int):
+        """
+        Создание и подготовка к работе объекта "House"
+        :param material: Материал дома
+        :param floor: Этажность
+        """
         self._material = material
         self._floor = floor
+        
+    def buy_house (self) -> None:
+        """
+        Купить.
+        
+        Примеры:
+        >>> s_house = House(wood,'10')
+        >>> s_house.buy_house()
+        """
+        ...
 
     @property
     def material(self):
@@ -26,6 +41,11 @@ class House:
 
 class ApartmentBuilding(House):
     def __init__(self, material: str, floor: int, flats: int):
+        """
+        Создание и подготовка к работе дочернего класса "ApartmentBuilding"
+        :param flats: Количество квартир
+        
+        """
         super().__init__(material, floor)
         self._flats = None
         self._flats = flats
@@ -51,6 +71,11 @@ class ApartmentBuilding(House):
 
 class DetachedHouse(House):
     def __init__(self, material: str, floors: int, room: int):
+        """
+        Создание и подготовка к работе дочернего класса "DetachedHouse"
+        :param room: Количество комнат
+        
+        """
         super().__init__(material, floors)
         self._room = None
         self._room = room
